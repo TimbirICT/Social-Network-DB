@@ -1,4 +1,3 @@
-// controllers/thoughtController.js
 
 const { Thought, User } = require('../models');
 const { handleServerError } = require('../utils/errorHandler');
