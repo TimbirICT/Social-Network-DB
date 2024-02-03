@@ -1,6 +1,6 @@
 // models/Reaction.js
-
-const { Schema, Types } = require('mongoose');
+const mongoose = require('mongoose');
+const { Schema } = require('mongoose');
 
 const reactionSchema = new Schema({
   reactionId: {
