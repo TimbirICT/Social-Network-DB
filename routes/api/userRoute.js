@@ -12,7 +12,7 @@ router.route('/')
 router.route('/:userId')
   .get(userController.getSingleUser)
   .put(userController.updateUser)
-  .delete(userController.deleteUser);
+  .delete(userController.deleteUser); // Ensure this line has the deleteUser method
 
 // /api/users/:userId/friends/:friendId
 router.route('/:userId/friends/:friendId')
