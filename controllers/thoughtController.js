@@ -1,6 +1,6 @@
 
 const { Thought, User } = require('../models');
-const { handleServerError } = require('../utils/errorHandler');
+const { handleServerError } = require('../utils/errorHandling');
 
 const thoughtController = {
   // GET /api/thoughts
@@ -61,6 +61,24 @@ const thoughtController = {
       // Remove the thought ID from the associated user's thoughts array
       await User.findByIdAndUpdate(thought.userId, { $pull: { thoughts: thought._id } });
       res.status(200).json({ message: 'Thought deleted successfully.', thought });
+    } catch (error) {
+      handleServerError(error, res);
+    }
+  },
+  createReaction: async (req, res) => {
+    try {
+      // Your logic for creating a reaction
+      res.status(200).json({ message: 'Reaction created successfully.' });
+    } catch (error) {
+      handleServerError(error, res);
+    }
+  },
+  
+  // DELETE /api/thoughts/:thoughtId/reactions
+  deleteReaction: async (req, res) => {
+    try {
+      // Your logic for deleting a reaction
+      res.status(200).json({ message: 'Reaction deleted successfully.' });
     } catch (error) {
       handleServerError(error, res);
     }

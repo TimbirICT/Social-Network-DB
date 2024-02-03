@@ -4,5 +4,5 @@ const userRoutes = require('./api/userRoute'); // Adjust the path based on your 
 
 router.use('/api/users', userRoutes);
 // Add other routes using router.use as needed
-
+router.use('/thoughts', require('./api/thoughtRoute'));
 module.exports = router;

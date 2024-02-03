@@ -1,4 +1,4 @@
-// routes/api/thoughts.js
+// routes/api/thoughtRoute.js
 
 const router = require('express').Router();
 const thoughtController = require('../../controllers/thoughtController');
@@ -16,10 +16,7 @@ router.route('/:thoughtId')
 
 // /api/thoughts/:thoughtId/reactions
 router.route('/:thoughtId/reactions')
-  .post(reactionController.createReaction);
-
-// /api/thoughts/:thoughtId/reactions/:reactionId
-router.route('/:thoughtId/reactions/:reactionId')
-  .delete(reactionController.removeReaction);
-
+  .post(thoughtController.createReaction)
+  .delete(thoughtController.deleteReaction);
+  
 module.exports = router;
