@@ -1,16 +1,9 @@
-
-
 const User = require('../models/User');
 const Thought = require('../models/Thought');
 const Reaction = require('../models/Reaction');
 
-
-
-
 const initData = async () => {
-  
-// creating a user
-  
+  // creating a user
   const user1 = await User.create({
     username: 'exampleUser',
     email: 'example@example.com',
@@ -31,8 +24,6 @@ const initData = async () => {
   // Adding the reaction to the thought
   thought1.reactions.push(reaction1);
   await thought1.save();
-
-  
 
   console.log('Data generated successfully!');
 };
