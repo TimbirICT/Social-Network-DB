@@ -1,6 +1,6 @@
 
 const { Thought } = require('../models');
-const { handleServerError } = require('../utils/errorHandler');
+const { handleServerError } = require('../utils/errorHandling');
 
 const reactionController = {
   // POST /api/thoughts/:thoughtId/reactions
