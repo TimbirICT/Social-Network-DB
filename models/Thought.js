@@ -1,7 +1,16 @@
-// models/Thought.js
-
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
+
+const reactionSchema = new Schema({
+  reactionBody: {
+    type: String,
+    required: true,
+  },
+  username: {
+    type: String,
+    required: true,
+  },
+});
 
 const thoughtSchema = new Schema({
   thoughtText: {
@@ -17,12 +26,7 @@ const thoughtSchema = new Schema({
     type: String,
     required: true,
   },
-  reactions: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Reaction',
-    },
-  ],
+  reactions: [reactionSchema], // Array of reactionSchema objects
 });
 
 // Virtual to get the reaction count

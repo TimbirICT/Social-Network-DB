@@ -1,4 +1,3 @@
-// models/Reaction.js
 const mongoose = require('mongoose');
 const { Schema } = require('mongoose');
 

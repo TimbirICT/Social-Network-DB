@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const {
   createReaction,
-  removeReaction, // Make sure this method is correctly referenced
+  removeReaction, 
 } = require('../../controllers/reactionController');
 
 // /api/thoughts/:thoughtId/reactions
@@ -10,6 +10,6 @@ router.route('/:thoughtId/reactions')
 
 // /api/thoughts/:thoughtId/reactions/:reactionId
 router.route('/:thoughtId/reactions/:reactionId')
-  .delete(removeReaction); // Ensure correct method reference
+  .delete(removeReaction); 
 
-module.exports = router;
+  module.exports = router;
